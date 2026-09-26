@@ -7,7 +7,7 @@ export default function Profile() {
       <input id="wd-username" defaultValue="zhihao" />
       <br />
       <label htmlFor="wd-password">Password</label>
-      <input id="wd-password" type="password" defaultValue="password" />
+      <input id="wd-password" type="password" />
       <br />
       <label htmlFor="wd-firstname">First name</label>
       <input id="wd-firstname" defaultValue="Zhihao" />
@@ -16,13 +16,13 @@ export default function Profile() {
       <input id="wd-lastname" defaultValue="Qian" />
       <br />
       <label htmlFor="wd-dob">Date of birth</label>
-      <input id="wd-dob" type="date" defaultValue="2000-01-01" />
+      <input id="wd-dob" type="date" />
       <br />
       <label htmlFor="wd-email">Email</label>
       <input
         id="wd-email"
         type="email"
-        defaultValue="student@example.com"
+        defaultValue="qian.zhi@northeastern.edu"
       />
       <br />
       <label htmlFor="wd-role">Role</label>

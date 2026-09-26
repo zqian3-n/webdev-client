@@ -17,9 +17,16 @@ h3 {
   font-size: 1.2em;
   font-weight: bold;
 }
-h4,
-h5,
+h4 {
+  font-size: 1em;
+  font-weight: bold;
+}
+h5 {
+  font-size: 0.83em;
+  font-weight: bold;
+}
 h6 {
+  font-size: 0.67em;
   font-weight: bold;
 }
 p {
@@ -59,4 +66,16 @@ button {
 hr {
   margin: 12px 0;
   border-color: #bbb;
+}
+
+/* Restore the HTML table grid cleared by Tailwind preflight. */
+table[border="1"],
+table[border="1"] th,
+table[border="1"] td {
+  border: 1px solid #888;
+}
+fieldset {
+  border: 1px solid #aaa;
+  padding: 8px;
+  margin: 8px 0;
 }

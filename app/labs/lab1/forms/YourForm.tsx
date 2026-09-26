@@ -1,70 +1,215 @@
 "use client";
+// Forms.tsx imports this single personal form. Defaults are part of the static A1 prototype.
 export default function YourForm() {
   return (
     <section>
       <h4>Student Profile</h4>
       <form id="wd-your-form" onSubmit={(event) => event.preventDefault()}>
-        <label htmlFor="student-name">Name</label>
-        <input id="student-name" name="name" defaultValue="Zhihao Qian" />
+        <label htmlFor="student-first-name">First name</label>
+        <input id="student-first-name" name="firstName" defaultValue="Zhihao" />
         <br />
-        <label htmlFor="student-email">Email</label>
+        <label htmlFor="student-last-name">Last name</label>
+        <input id="student-last-name" name="lastName" defaultValue="Qian" />
+        <br />
+        <label htmlFor="student-password">Password</label>
         <input
-          id="student-email"
-          type="email"
-          name="email"
-          defaultValue="student@example.com"
+          id="student-password"
+          name="password"
+          type="password"
+          autoComplete="new-password"
         />
         <br />
-        <label htmlFor="student-bio">About me</label>
+        <label htmlFor="student-bio">Why I am taking this course</label>
         <br />
         <textarea
           id="student-bio"
           name="bio"
-          defaultValue="Computer science student learning web development."
-        />
-        <br />
-        <label htmlFor="student-role">Role</label>
-        <select id="student-role" name="role">
-          <option>Student</option>
-          <option>Teaching Assistant</option>
-        </select>
-        <br />
-        <label htmlFor="student-year">Year</label>
-        <input
-          id="student-year"
-          type="number"
-          min="1"
-          max="6"
-          defaultValue="2"
-        />
-        <br />
-        <label htmlFor="student-start">Start date</label>
-        <input id="student-start" type="date" defaultValue="2026-09-01" />
-        <br />
-        <label htmlFor="student-interest">Interest level</label>
-        <input
-          id="student-interest"
-          type="range"
-          min="0"
-          max="10"
-          defaultValue="7"
+          rows={4}
+          cols={50}
+          defaultValue="I am a second-year, full-time Computer Science graduate student at Northeastern University. I want to build useful websites, understand React components, and connect user interfaces to databases."
         />
         <br />
         <fieldset>
-          <legend>Study mode</legend>
-          <input id="mode-online" type="radio" name="mode" defaultChecked />
-          <label htmlFor="mode-online">Online</label>
-          <input id="mode-campus" type="radio" name="mode" />
-          <label htmlFor="mode-campus">Campus</label>
+          <legend>Class standing</legend>
+          <div>
+            <input
+              id="standing-Freshman"
+              name="standing"
+              type="radio"
+              value="Freshman"
+            />
+            <label htmlFor="standing-Freshman">Freshman</label>
+          </div>
+          <div>
+            <input
+              id="standing-Sophomore"
+              name="standing"
+              type="radio"
+              value="Sophomore"
+            />
+            <label htmlFor="standing-Sophomore">Sophomore</label>
+          </div>
+          <div>
+            <input
+              id="standing-Junior"
+              name="standing"
+              type="radio"
+              value="Junior"
+            />
+            <label htmlFor="standing-Junior">Junior</label>
+          </div>
+          <div>
+            <input
+              id="standing-Senior"
+              name="standing"
+              type="radio"
+              value="Senior"
+            />
+            <label htmlFor="standing-Senior">Senior</label>
+          </div>
+          <div>
+            <input
+              id="standing-Graduate"
+              name="standing"
+              type="radio"
+              value="Graduate"
+              defaultChecked
+            />
+            <label htmlFor="standing-Graduate">Graduate</label>
+          </div>
         </fieldset>
-        <input id="student-html" type="checkbox" defaultChecked />
-        <label htmlFor="student-html">Learning HTML</label>
+        <fieldset>
+          <legend>Study mode</legend>
+          <input
+            id="mode-full-time"
+            name="mode"
+            type="radio"
+            value="full-time"
+            defaultChecked
+          />
+          <label htmlFor="mode-full-time">Full-time</label>
+          <input
+            id="mode-part-time"
+            name="mode"
+            type="radio"
+            value="part-time"
+          />
+          <label htmlFor="mode-part-time">Part-time</label>
+        </fieldset>
+        <fieldset>
+          <legend>Learning interests</legend>
+          <div>
+            <input
+              id="interest-HTML"
+              name="interests"
+              type="checkbox"
+              value="HTML"
+              defaultChecked
+            />
+            <label htmlFor="interest-HTML">HTML</label>
+          </div>
+          <div>
+            <input
+              id="interest-React"
+              name="interests"
+              type="checkbox"
+              value="React"
+              defaultChecked
+            />
+            <label htmlFor="interest-React">React</label>
+          </div>
+          <div>
+            <input
+              id="interest-Databases"
+              name="interests"
+              type="checkbox"
+              value="Databases"
+              defaultChecked
+            />
+            <label htmlFor="interest-Databases">Databases</label>
+          </div>
+          <div>
+            <input
+              id="interest-Accessibility"
+              name="interests"
+              type="checkbox"
+              value="Accessibility"
+            />
+            <label htmlFor="interest-Accessibility">Accessibility</label>
+          </div>
+        </fieldset>
+        <label htmlFor="student-major">Major</label>
+        <select id="student-major" name="major" defaultValue="CS">
+          <option value="" disabled>
+            Select your major
+          </option>
+          <option value="CS">Computer Science</option>
+          <option value="IS">Information Systems</option>
+          <option value="DS">Data Science</option>
+          <option value="OTHER">Other</option>
+        </select>
         <br />
-        <label htmlFor="student-password">Password</label>
-        <input id="student-password" type="password" />
+        <label htmlFor="student-topics">
+          Topics to explore (Ctrl-click to select several)
+        </label>
         <br />
-        <button type="submit">Save</button>
-        <button type="reset">Cancel</button>
+        <select
+          id="student-topics"
+          name="topics"
+          multiple
+          size={4}
+          defaultValue={["REACT", "DATABASES"]}
+        >
+          <option value="HTML">HTML</option>
+          <option value="CSS">CSS</option>
+          <option value="REACT">React</option>
+          <option value="DATABASES">Databases</option>
+        </select>
+        <br />
+        <label htmlFor="student-email">School email</label>
+        <input
+          id="student-email"
+          name="email"
+          type="email"
+          defaultValue="qian.zhi@northeastern.edu"
+        />
+        <br />
+        <label htmlFor="student-year">Expected graduation year</label>
+        <input
+          id="student-year"
+          name="graduationYear"
+          type="number"
+          min={2026}
+          max={2040}
+          defaultValue={2027}
+        />
+        <br />
+        <label htmlFor="student-start">Program start date</label>
+        <input
+          id="student-start"
+          name="startDate"
+          type="date"
+          defaultValue="2025-09-01"
+        />
+        <br />
+        <label htmlFor="student-interest">
+          Excitement about this course (0-10)
+        </label>
+        <input
+          id="student-interest"
+          name="excitement"
+          type="range"
+          min={0}
+          max={10}
+          defaultValue={8}
+        />
+        <br />
+        <button id="wd-your-form-save" type="submit">
+          Save
+        </button>
+        <button id="wd-your-form-cancel" type="button">
+          Cancel
+        </button>
       </form>
     </section>
   );

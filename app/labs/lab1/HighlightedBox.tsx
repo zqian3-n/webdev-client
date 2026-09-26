@@ -1,17 +1,31 @@
 import type { ReactNode } from "react";
 export default function HighlightedBox({
   children,
-  backgroundColor,
-  color,
+  backgroundColor = "lightyellow",
+  color = "black",
+  borderColor = "orange",
+  borderWidth = 2,
+  borderRadius = 8,
 }: {
-  children: ReactNode;
-  backgroundColor: string;
-  color: string;
+  children?: ReactNode;
+  backgroundColor?: string;
+  color?: string;
+  borderColor?: string;
+  borderWidth?: string | number;
+  borderRadius?: string | number;
 }) {
   return (
     <div
-      id="wd-highlighted-box"
-      style={{ backgroundColor, color, padding: 8, margin: "8px 0" }}
+      style={{
+        backgroundColor,
+        color,
+        borderColor,
+        borderWidth,
+        borderRadius,
+        borderStyle: "solid",
+        padding: "0.75rem",
+        marginBottom: "0.75rem",
+      }}
     >
       {children}
     </div>

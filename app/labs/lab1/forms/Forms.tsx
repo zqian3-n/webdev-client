@@ -10,8 +10,8 @@ import YourForm from "./YourForm";
 export default function Forms() {
   return (
     <section id="wd-forms">
-      <h4>Forms</h4>
-      <form onSubmit={(event) => event.preventDefault()}>
+      <h4>Form Elements</h4>
+      <form id="wd-text-fields" onSubmit={(event) => event.preventDefault()}>
         <TextFields />
         <TextAreas />
         <RadioButtons />

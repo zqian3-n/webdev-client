@@ -1,8 +1,8 @@
 import Link from "next/link";
 export default function TOC() {
   return (
-    <nav>
-      <Link href="/" id="wd-kambaz-link">
+    <nav id="wd-labs-toc">
+      <Link href="/" id="wd-toc-kambaz-link">
         Kambaz
       </Link>
       <br />
@@ -11,7 +11,7 @@ export default function TOC() {
       {[1, 2, 3, 4, 5].map((n) => (
         <span key={n}>
           <Link
-            id={n === 4 ? "wd-lab4-link" : undefined}
+            id={n === 4 ? "wd-toc-lab4-link" : undefined}
             href={`/labs/lab${n}`}
           >
             Lab {n}
