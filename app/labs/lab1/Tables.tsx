@@ -40,7 +40,7 @@ export default function Tables() {
         <tbody>
           {grades.map((grade, i) => (
             <tr key={i}>
-              <td>Q{i + 1}</td>
+              <td>{`Q${i + 1}`}</td>
               <td align="center">{topics[i]}</td>
               <td align="center">{dates[i]}</td>
               <td align="right">{grade}</td>
