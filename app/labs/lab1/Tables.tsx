@@ -12,16 +12,28 @@ export default function Tables() {
     "APIs",
     "Review",
   ];
+  const dates = [
+    "2/3/21",
+    "2/10/21",
+    "2/17/21",
+    "2/24/21",
+    "3/3/21",
+    "3/10/21",
+    "3/17/21",
+    "3/24/21",
+    "3/31/21",
+    "4/7/21",
+  ];
   const average = grades.reduce((a, b) => a + b, 0) / grades.length;
   return (
     <section id="wd-tables">
       <h4>Table Tag</h4>
-      <table border={1}>
+      <table border={1} width="100%">
         <thead>
           <tr>
             <th>Quiz</th>
-            <th>Topic</th>
-            <th>Date</th>
+            <th align="center">Topic</th>
+            <th align="center">Date</th>
             <th>Grade</th>
           </tr>
         </thead>
@@ -30,7 +42,7 @@ export default function Tables() {
             <tr key={i}>
               <td>Q{i + 1}</td>
               <td align="center">{topics[i]}</td>
-              <td align="center">{2 + i}/3/21</td>
+              <td align="center">{dates[i]}</td>
               <td align="right">{grade}</td>
             </tr>
           ))}
@@ -47,7 +59,7 @@ export default function Tables() {
         <thead>
           <tr>
             <th>Day</th>
-            <th>Topic</th>
+            <th align="center">Topic</th>
           </tr>
         </thead>
         <tbody>

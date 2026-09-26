@@ -5,14 +5,26 @@ export default function RadioButtons() {
       <p>Favorite genre</p>
       {["comedy", "drama", "fantasy", "scifi"].map((g) => (
         <span key={g}>
-          <input id={`wd-radio-${g}`} type="radio" name="genre" value={g} />
+          <input
+            id={`wd-radio-${g}`}
+            type="radio"
+            name="radio-genre"
+            value={g}
+            defaultChecked={g === "comedy" || g === "weekly"}
+          />
           <label htmlFor={`wd-radio-${g}`}>{g}</label>
         </span>
       ))}
       <p>Frequency</p>
       {["daily", "weekly", "rarely"].map((g) => (
         <span key={g}>
-          <input id={`wd-radio-${g}`} type="radio" name="frequency" value={g} />
+          <input
+            id={`wd-radio-${g}`}
+            type="radio"
+            name="radio-frequency"
+            value={g}
+            defaultChecked={g === "comedy" || g === "weekly"}
+          />
           <label htmlFor={`wd-radio-${g}`}>{g}</label>
         </span>
       ))}
