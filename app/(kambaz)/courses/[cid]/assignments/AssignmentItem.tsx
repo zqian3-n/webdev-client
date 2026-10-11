@@ -2,10 +2,7 @@ import Link from "next/link";
 import { FaFileAlt } from "react-icons/fa";
 
 export default function AssignmentItem({
-  cid,
-  aid,
-  title,
-  details,
+  cid, aid, title, details,
 }: {
   cid: string;
   aid: string;

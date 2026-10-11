@@ -10,8 +10,8 @@ export default function Module({
 }) {
   return (
     <li className="wd-module mb-5 overflow-hidden border border-neutral-400 p-0 text-xl">
-      <div className="wd-title flex items-center justify-between gap-3 bg-neutral-200 p-3 ps-2">
-        <span className="min-w-0">{title}</span>
+      <div className="wd-title flex items-center justify-between bg-neutral-200 p-3 ps-2">
+        <span>{title}</span>
         <GreenCheckmark />
       </div>
       <ul className="wd-lessons m-0 list-none p-0">{children}</ul>

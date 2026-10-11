@@ -2,10 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function CourseCard({
-  id,
-  title,
-  subtitle,
-  image,
+  id, title, subtitle, image,
 }: {
   id: string;
   title: string;

@@ -23,7 +23,17 @@ export default async function AssignmentEditor({
           rows={8}
           aria-label="Assignment description"
           className={field}
-          defaultValue="The assignment is available online Submit a link to the landing page of your Web application running on Vercel."
+          defaultValue={`The assignment is available online.
+
+Submit a link to the landing page of your Web application running on Vercel.
+
+The landing page should include the following:
+• Your full name and section
+• Links to each of the lab assignments
+• Link to the Kambaz application
+• Links to all relevant source code repositories
+
+The Kambaz application should include a link to navigate back to the landing page.`}
         />
       </div>
       <div className="grid items-start gap-3 sm:grid-cols-[160px_1fr]">

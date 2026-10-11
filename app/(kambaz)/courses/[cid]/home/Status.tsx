@@ -21,7 +21,7 @@ export default function CourseStatus() {
         </button>
         <button
           type="button"
-          className="inline-flex min-w-0 flex-1 items-center justify-center rounded bg-green-600 px-1.5 py-1.5 text-xs text-white"
+          className="inline-flex min-w-0 flex-1 items-center justify-center rounded bg-green-600 px-1.5 py-1.5 text-xs text-white hover:bg-green-700"
         >
           <FaCheckCircle className="me-1 shrink-0 text-base" /> Publish
         </button>

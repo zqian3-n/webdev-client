@@ -1,19 +1,22 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import "../../kambaz.css";
 export default function CourseNavigation({ cid }: { cid: string }) {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? "";
+  const home = `/courses/${cid}/home`;
+  const modules = `/courses/${cid}/modules`;
+  const assignments = `/courses/${cid}/assignments`;
   return (
     <div
       id="wd-courses-navigation"
       className="wd list-group rounded-none text-lg"
     >
       <Link
-        href={`/courses/${cid}/home`}
+        href={home}
         id="wd-course-home-link"
         className={
-          pathname === `/courses/${cid}/home` ||
-          pathname?.startsWith(`/courses/${cid}/home/`)
+          pathname === home
             ? "list-group-item active border-0"
             : "list-group-item border-0 text-red-600"
         }
@@ -21,11 +24,10 @@ export default function CourseNavigation({ cid }: { cid: string }) {
         Home
       </Link>
       <Link
-        href={`/courses/${cid}/modules`}
+        href={modules}
         id="wd-course-modules-link"
         className={
-          pathname === `/courses/${cid}/modules` ||
-          pathname?.startsWith(`/courses/${cid}/modules/`)
+          pathname === modules
             ? "list-group-item active border-0"
             : "list-group-item border-0 text-red-600"
         }
@@ -57,11 +59,10 @@ export default function CourseNavigation({ cid }: { cid: string }) {
         Zoom
       </Link>
       <Link
-        href={`/courses/${cid}/assignments`}
+        href={assignments}
         id="wd-course-assignments-link"
         className={
-          pathname === `/courses/${cid}/assignments` ||
-          pathname?.startsWith(`/courses/${cid}/assignments/`)
+          pathname === assignments || pathname.startsWith(assignments + "/")
             ? "list-group-item active border-0"
             : "list-group-item border-0 text-red-600"
         }
