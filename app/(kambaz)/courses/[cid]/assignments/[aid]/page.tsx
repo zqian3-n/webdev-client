@@ -1,10 +1,12 @@
 import Link from "next/link";
+import * as db from "../../../../database";
 export default async function AssignmentEditor({
   params,
 }: {
   params: Promise<{ cid: string; aid: string }>;
 }) {
-  const { cid } = await params;
+  const { cid, aid } = await params;
+  const assignment = db.assignments.find((a) => a._id === aid);
   const field = "w-full rounded border border-neutral-300 bg-white px-3 py-2";
   return (
     <div id="wd-assignments-editor" className="max-w-3xl space-y-5">
@@ -12,7 +14,7 @@ export default async function AssignmentEditor({
         <label htmlFor="wd-name" className="mb-1 block">
           Assignment Name
         </label>
-        <input id="wd-name" defaultValue="A1 - ENV + HTML" className={field} />
+        <input id="wd-name" defaultValue={assignment?.title ?? ""} className={field} />
       </div>
       <div>
         <label htmlFor="wd-description" className="mb-1 block">
@@ -23,17 +25,7 @@ export default async function AssignmentEditor({
           rows={8}
           aria-label="Assignment description"
           className={field}
-          defaultValue={`The assignment is available online.
-
-Submit a link to the landing page of your Web application running on Vercel.
-
-The landing page should include the following:
-• Your full name and section
-• Links to each of the lab assignments
-• Link to the Kambaz application
-• Links to all relevant source code repositories
-
-The Kambaz application should include a link to navigate back to the landing page.`}
+          defaultValue={assignment?.description ?? ""}
         />
       </div>
       <div className="grid items-start gap-3 sm:grid-cols-[160px_1fr]">
@@ -42,7 +34,7 @@ The Kambaz application should include a link to navigate back to the landing pag
         </label>
         <input
           id="wd-points"
-          defaultValue={100}
+          defaultValue={assignment?.points ?? 100}
           type="number"
           className={field}
         />
@@ -119,7 +111,7 @@ The Kambaz application should include a link to navigate back to the landing pag
             <input
               id="wd-due-date"
               type="date"
-              defaultValue="2024-05-13"
+              defaultValue={assignment?.due}
               className={field}
             />
           </div>
@@ -134,7 +126,7 @@ The Kambaz application should include a link to navigate back to the landing pag
               <input
                 id="wd-available-from"
                 type="date"
-                defaultValue="2024-05-06"
+                defaultValue={assignment?.available}
                 className={field}
               />
             </div>
